@@ -95,7 +95,10 @@ return [
     |
     */
 
-    //'menus' => ['menu_location' => 'menu_description'],
+    'menus' => [
+        'main-navigation' => 'Main Navigation',
+        'footer-nav-1' => 'Footer Navigation',
+    ],
 
     /*
     |--------------------------------------------------------------------------

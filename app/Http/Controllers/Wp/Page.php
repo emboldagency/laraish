@@ -18,7 +18,7 @@ class Page extends Controller
 
     public function index()
     {
-        $data = [];
+        $data = $this->get_data(new Post());
 
         return $this->resolveView('wp.page', $data);
     }

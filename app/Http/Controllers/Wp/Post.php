@@ -18,6 +18,8 @@ class Post extends Controller
 
     public function index()
     {
-        return $this->resolveView('wp.post');
+        $data = $this->get_data(new Post());
+
+        return $this->resolveView('wp.post', $data);
     }
 }

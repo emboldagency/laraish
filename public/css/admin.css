@@ -1,0 +1,53 @@
+html :where(.wp-block) {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+
+  html :where(.wp-block) {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1364px) {
+
+  html :where(.wp-block) {
+    max-width: 1364px;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+}
+
+.acf-block-preview h1,
+  .acf-block-preview h2,
+  .acf-block-preview h3,
+  .acf-block-preview h4,
+  .acf-block-preview h5,
+  .acf-block-preview h6 {
+  }
+
+@media (min-width: 1500px) {
+  /* make the sidebar on the page editor a little wider on the larger screens */
+  .interface-complementary-area {
+    width: 400px;
+  }
+}

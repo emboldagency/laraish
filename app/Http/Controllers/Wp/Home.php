@@ -8,9 +8,7 @@ class Home extends Controller
 {
     public function index()
     {
-        $data = [
-            'version' => app()->version(),
-        ];
+        $data = $this->get_data(new Post());
 
         return $this->view('wp.home', $data);
     }

@@ -1,0 +1,39 @@
+html :where(.wp-block) {
+  @apply container;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+}
+
+.acf-block-preview {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+  }
+}
+
+@media (min-width: 1500px) {
+  /* make the sidebar on the page editor a little wider on the larger screens */
+  .interface-complementary-area {
+    width: 400px;
+  }
+}

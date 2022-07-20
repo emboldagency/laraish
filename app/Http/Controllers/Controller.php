@@ -12,4 +12,18 @@ use Laraish\Routing\Traits\ViewResolver;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests, ViewDebugger, ViewResolver;
+
+    public function get_data($post) {
+        $data = [];
+
+        // set $data['site'] = to all theme options
+        $data['site'] = get_fields('options');
+
+        // page specific data
+        if (isset($post->ID)) {
+            $data['page'] = get_fields($post->ID);
+        }
+
+        return $data;
+    }
 }

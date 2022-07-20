@@ -1,44 +1,42 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#">
+<html prefix="og: http://ogp.me/ns#" lang="en">
 <head>
-    <title>Laraish</title>
-
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=10,user-scalable=no,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="red">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
 
-    <link rel="shortcut icon" href="{{ public_url('images/favicon.ico') }}" type="image/vnd.microsoft.icon"/>
-    <link rel="apple-touch-icon-precomposed" href="{{ public_url('images/apple-touch-icon-precomposed.png') }}">
-    <link rel="stylesheet" href="{{ public_url('css/app.css') }}"/>
+    <?php echo wp_site_icon() ?>
+    <link rel="stylesheet" href="{{ public_url('css/app.css') }}">
     <link rel="stylesheet" href="{{ get_stylesheet_uri() }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
     @yield('head')
     <?php wp_head();?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 
-@if(env('APP_ENV')==='production')
+@if(env('APP_ENV') === 'production')
     <script>
         // scripts only should be ran on production server.
     </script>
 @endif
 
 <div class="site">
-    <header class="site-header">
-
-    </header>
+    @include('partials.header')
+    @include('partials.mobile-nav')
 
     <main class="site-main">
         @yield('content')
     </main>
 
-    <footer class="site-footer">
-
-    </footer>
+    @include('partials.footer')
 </div>
 
 @yield('footer')
 <?php wp_footer();?>
-
+<script src="{{ public_url('js/app.js') }}"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 </html>
