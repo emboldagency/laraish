@@ -11,5 +11,7 @@ These fields will not be displayed with the rest of the field groups. They will 
 
 ## Search results page slug
 
+```
 RewriteCond %{QUERY_STRING} \\?s=([^&]+) [NC]
 RewriteRule ^$ /search/%1/? [NC,R,L]
+```
