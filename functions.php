@@ -62,14 +62,7 @@ $app['events']->listen(RequestHandled::class, function (RequestHandled $event) u
     $kernel->terminate($event->request, $event->response);
 });
 
-if( function_exists('acf_add_options_page')) {
-	acf_add_options_page(array(
-		'page_title' 	=> 'Theme Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
+// require all files in the functions folder
+foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
+	require_once get_template_directory() . '/functions/' . basename($function);
 }
-
-require 'functions/blocks.php';

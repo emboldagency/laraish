@@ -2,8 +2,8 @@
 /**
  * Title: Accordion
  * Name: accordion
- * Description: Accordion Block
- * Icon: admin-generic
+ * Description: A custom block that displays info in an accordion.
+ * Icon: list-view
  * Keywords: accordion
  * Enqueue Script: public/js/blocks/accordion.js
  */

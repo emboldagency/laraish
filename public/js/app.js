@@ -11,9 +11,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /* harmony import */ var _mobile_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mobile-nav */ "./resources/js/mobile-nav.js");
-/* harmony import */ var _slick_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./slick-slider */ "./resources/js/slick-slider.js");
-/* harmony import */ var _slick_slider__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_slick_slider__WEBPACK_IMPORTED_MODULE_2__);
-
 
 
 
@@ -51,7 +48,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
- // call trapFocus in a function so we can removeEventListener later
+ // call trapFocus in a function so we can removeEventListener() later
 
 function initTrapFocus(e) {
   return (0,_utils_trapFocus__WEBPACK_IMPORTED_MODULE_0__.trapFocus)(e, "mobile-nav-wrapper");
@@ -224,35 +221,6 @@ document.body.addEventListener('click', /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }());
-
-/***/ }),
-
-/***/ "./resources/js/slick-slider.js":
-/*!**************************************!*\
-  !*** ./resources/js/slick-slider.js ***!
-  \**************************************/
-/***/ (() => {
-
-jQuery(function ($) {
-  $(document).ready(function () {
-    $('.home-slider').slick({
-      initialSlide: 0,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      prevArrow: $('.prev-slide'),
-      nextArrow: $('.next-slide')
-    });
-  });
-  $(document).ready(function () {
-    $('.home-slider__mobile').slick({
-      initialSlide: 0,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      prevArrow: $('.prev-slide__mobile'),
-      nextArrow: $('.next-slide__mobile')
-    });
-  });
-});
 
 /***/ }),
 

@@ -26,11 +26,18 @@ return [
     |
     */
 
-    //'post_types' => [
-    //    'post_type' => [
-    //        'label' => 'Post Type Label'
-    //    ],
-    //],
+    'post_types' => [
+        'testimonials' => [
+            'labels' => [
+                'name' => __( 'Testimonials' ),
+                'singular_name' => __( 'Testimonial' )
+            ],
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'testimonials'),
+            'show_in_rest' => true,
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------

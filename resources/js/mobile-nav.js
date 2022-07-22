@@ -1,6 +1,6 @@
 import { trapFocus } from './utils/trapFocus';
 
-// call trapFocus in a function so we can removeEventListener later
+// call trapFocus in a function so we can removeEventListener() later
 function initTrapFocus(e) {
   return trapFocus(e, `mobile-nav-wrapper`);
 }

@@ -1,0 +1,12 @@
+/* masonry images */
+.masonry-item {
+  @apply md:w-[48%] lg:w-[32%];
+
+  @media screen and (max-width: 767px) {
+    left: 0 !important;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 775px) {
+    width: 47%;
+  }
+}

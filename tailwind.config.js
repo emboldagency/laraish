@@ -3,22 +3,35 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: ["./resources/**/*.blade.php", "./resources/**/*.php", "./resources/**/*.css", "./search-filter/*.php"],
   theme: {
-    colors: {
+    colors: { // https://www.tailwindshades.com/
       'white': '#fff',
       transparent: 'transparent',
       black: '#000',
       primary: {
-        default: '#ff0000',
-        '50': '#ffb8b8',
-        '100': '#ffa3a3',
-        '200': '#ff7a7a',
-        '300': '#ff5252',
-        '400': '#ff2929',
-        '500': '#ff0000',
-        '600': '#c70000',
-        '700': '#8f0000',
-        '800': '#570000',
-        '900': '#1f0000'
+        default: '#009dff',
+        '50': '#b8e4ff',
+        '100': '#a3dcff',
+        '200': '#7accff',
+        '300': '#52bcff',
+        '400': '#29adff',
+        '500': '#009dff',
+        '600': '#007ac7',
+        '700': '#00588f',
+        '800': '#003557',
+        '900': '#00131f'
+      },
+      secondary: {
+        default: '#fff600',
+        '50': '#fffcb8',
+        '100': '#fffca3',
+        '200': '#fffa7a',
+        '300': '#fff952',
+        '400': '#fff729',
+        '500': '#fff600',
+        '600': '#c7c000',
+        '700': '#8f8a00',
+        '800': '#575400',
+        '900': '#1f1e00'
       },
       gray: {
         default: '#323032',

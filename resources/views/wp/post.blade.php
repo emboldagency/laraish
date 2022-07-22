@@ -3,7 +3,7 @@
 @section('content')
     <header class="relative bg-center bg-no-repeat bg-cover post-header" @if($post->thumbnail) style="background-image: url('{{ $post->thumbnail->url }}');" @endif>
     <div class="absolute inset-0" style="background-color: #000; opacity: .6"></div>
-        
+
     </header>
     <div style="background-image: url('{{ public_url('images/asphalt-texture.png') }}');">
         <div class="px-2 lg:px-0">
@@ -11,7 +11,7 @@
                 <span class="block pb-2 leading-none uppercase text-2xs text-red-default lg:text-xl lg:pb-4">@php the_category(', ') @endphp</span>
                 <h1 class="text-2xl italic font-extrabold leading-tight text-white lg:text-4xl">{!! $post->title !!}</h1>
                 <div class="pt-2 text-2xs text-gray-250">
-                    <div>Posted <date datetime="{{ $post->dateTime }}">{{ the_time('m/d/y') }}</date> by {{ $post->author->nickname }}</span></div>
+                    <div>Posted <time datetime="{{ $post->dateTime }}">{{ the_time('m/d/y') }}</time> by {{ $post->author->nickname }}</span></div>
                     @if (get_the_modified_time('F jS, Y'))
                         <div class="text-white">Last updated on {{ get_the_modified_time('m/d/Y') }}</div>
                     @endif
@@ -27,7 +27,7 @@
             <div id="share-author" class="lg:flex">
                 <div class="px-6 lg:w-1/2 lg:flex lg:flex-col lg:pt-9 lg:border-t-2 lg:border-gray-150">
                     <div class="pb-6 lg:order-1">
-                        @php 
+                        @php
                             $tags = wp_get_post_tags($post->id)
                         @endphp
                         <span class="text-sm italic font-bold">Keywords</span>
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
     <div style="background-image: url('{{ public_url('images/asphalt-texture.png') }}');" class="pb-12">
         <div style="background-image: url('{{ public_url('images/tread-marks.svg') }}');" class="pb-12 bg-white bg-repeat-x lg:hidden">
@@ -96,14 +96,14 @@
                     @foreach ($similar_posts as $post)
                         @php
                             setup_postdata($post);
-                            $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium'); 
+                            $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
                         @endphp
                         <a class="flex flex-col mb-6 similar-story" href="{{ $post->guid }}" style="background-image: url('<?php echo $thumb[0]; ?>')">
                             <h3 class="w-full h-full px-6 pt-16 pb-6 text-sm font-extrabold leading-tight text-left text-white lg:pt-32 lg:pb-3 lg:text-xl" style="background-color: rgba(0,0,0,.5)">{!! $post->post_title !!}</h3>
-                        </a>  
+                        </a>
                     @endforeach
                 </div>
             </div>
         </section>
     @endif
-@endsection 
+@endsection

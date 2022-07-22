@@ -10,7 +10,6 @@
     <?php echo wp_site_icon() ?>
     <link rel="stylesheet" href="{{ public_url('css/app.css') }}">
     <link rel="stylesheet" href="{{ get_stylesheet_uri() }}">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
     @yield('head')
     <?php wp_head();?>
@@ -37,6 +36,5 @@
 @yield('footer')
 <?php wp_footer();?>
 <script src="{{ public_url('js/app.js') }}"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 </html>
