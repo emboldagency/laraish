@@ -12,7 +12,7 @@ dev:
 	# update /storage permissions
 	sudo chmod -R 777 storage
 
-	# remove .git directory so no starter files aren't overwritten
+	# remove .git directory so none of the theme's starter files are overwritten
 	# moving it to a different directory so it can be restored for developing
 	mv .git ~/.git.bak
 
@@ -31,7 +31,7 @@ prod:
 	# update /storage permissions
 	sudo chmod -R 777 storage
 
-	# remove .git directory so no starter files aren't overwritten
+	# remove .git directory so none of the theme's starter files are overwritten
 	rm -rf .git
 
 git:

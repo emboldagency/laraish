@@ -26,7 +26,7 @@ function embold_acf_register_json_fields() {
 
 			if ($custom_fields) {
 				foreach ($custom_fields as $custom_field) {
-					// TODO: uncomment
+					// ! comment this out if you import acf-fields.json into the database
 					acf_add_local_field_group($custom_field);
 				}
 			}
