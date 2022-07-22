@@ -7,6 +7,7 @@ dev:
 	# .env setup
 	cp .env.example .env
 	php artisan key:generate
+	sed -i "s|APP_URL=|APP_URL=${DEVURL}|g" .env
 
 	# update /storage permissions
 	sudo chmod -R 777 storage
@@ -14,6 +15,9 @@ dev:
 	# remove .git directory so no starter files aren't overwritten
 	# moving it to a different directory so it can be restored for developing
 	mv .git ~/.git.bak
+
+	# activate the new theme
+	wp theme activate $(notdir $(CURDIR))
 
 prod:
 	# install dependencies
@@ -32,3 +36,6 @@ prod:
 
 git:
 	if [ -d ~/.git.bak ]; then mv ~/.git.bak .git; fi
+
+test:
+	sed -i "s|APP_URL=|APP_URL=${DEVURL}|g" .env
