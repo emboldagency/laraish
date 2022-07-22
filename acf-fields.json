@@ -68,7 +68,104 @@
                 {
                     "param": "block",
                     "operator": "==",
-                    "value": "all"
+                    "value": "acf\/accordion"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "left",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_62da082089eeb",
+        "title": "Block: Hero",
+        "fields": [
+            {
+                "key": "field_62da08208e804",
+                "label": "First Block",
+                "name": "first_block",
+                "type": "select",
+                "instructions": "Is this the first section of the page? This info is used to help accessibility.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "true": "Yes",
+                    "false": "No"
+                },
+                "default_value": "h2",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_62da0940b5ed2",
+                "label": "Hero Slider",
+                "name": "hero_slider",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_62da0948b5ed3",
+                        "label": "Slide",
+                        "name": "slide",
+                        "type": "clone",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "clone": [
+                            "field_62476baed91f1",
+                            "field_62476b398e9e3",
+                            "field_62476b508e9e4",
+                            "field_62ab7af6acaf1",
+                            "field_62476b668e9e5",
+                            "field_62ab7afeacaf2",
+                            "field_62ab7ab9acaf0"
+                        ],
+                        "display": "seamless",
+                        "layout": "block",
+                        "prefix_label": 0,
+                        "prefix_name": 0
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/hero-section"
                 }
             ]
         ],
@@ -114,10 +211,10 @@
             },
             {
                 "key": "field_624dd1acee4f5",
-                "label": "Heading Level",
-                "name": "heading_level",
+                "label": "First Block",
+                "name": "first_block",
                 "type": "select",
-                "instructions": "If this block is the first section of the page, this should be set to H1, Otherwise, you can leave it as H2.",
+                "instructions": "Is this the first section of the page? This info is used to help accessibility.",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -126,8 +223,8 @@
                     "id": ""
                 },
                 "choices": {
-                    "h1": "H1",
-                    "h2": "H2 (default)"
+                    "true": "Yes",
+                    "false": "No"
                 },
                 "default_value": "h2",
                 "allow_null": 0,
@@ -262,12 +359,58 @@
         "hide_on_screen": "",
         "active": true,
         "description": "",
-        "show_in_rest": 0,
-        "acfe_display_title": "",
-        "acfe_autosync": "",
-        "acfe_form": 0,
-        "acfe_meta": "",
-        "acfe_note": ""
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_62da0e33d9143",
+        "title": "Block: Image Gallery",
+        "fields": [
+            {
+                "key": "field_62da0e3997f5c",
+                "label": "Gallery",
+                "name": "gallery",
+                "type": "gallery",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "medium",
+                "insert": "append",
+                "library": "all",
+                "min": "",
+                "max": "",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/image-gallery"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
     },
     {
         "key": "group_624af4b168868-copy",
