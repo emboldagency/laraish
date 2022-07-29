@@ -45,3 +45,6 @@ acf:
 	rm acf-fields.json
 	wp plugin deactivate advanced-custom-fields-wpcli
 	rm -rf ../../plugins/advanced-custom-fields-wpcli
+
+perms:
+	sudo chmod -R 777 storage
