@@ -17,7 +17,7 @@ $bg_image = $fields['background_image'] ?? '';
 ?>
 
 <section
-  class="relative flex items-center justify-center md:p-20"
+  class="relative flex items-center justify-center md:px-20"
   style="background-image: url(<?php echo $bg_image ? $bg_image->url : ''; ?>); background-size: 100% 100%;"
 >
   <div class="pt-[35%]"></div>

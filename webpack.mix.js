@@ -1,12 +1,17 @@
-
-let mix = require('laravel-mix');
+const fs = require('fs');
+const mix = require('laravel-mix');
 const target = process.env.DEVURL;
 
 mix
 .options({ processCssUrls: false })
 .js('resources/js/app.js', 'public/js')
-.js('resources/js/blocks/**/*.js', 'public/js/blocks')
-.postCss("resources/css/app.css", "public/css")
+
+// compile all js files in the blocks folder individually and put them in the public/js/blocks folder
+fs.readdirSync('./resources/js/blocks/').forEach(file => {
+    mix.js(`resources/js/blocks/${file}`, 'public/js/blocks')
+});
+
+mix.postCss("resources/css/app.css", "public/css")
 .postCss("resources/css/admin.css", "public/css")
 .options({
     postCss: [

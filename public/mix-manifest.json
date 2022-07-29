@@ -1,6 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/blocks/accordion.js": "/js/blocks/accordion.js",
+    "/js/blocks/image-gallery.js": "/js/blocks/image-gallery.js",
+    "/js/blocks/slider.js": "/js/blocks/slider.js",
     "/css/admin.css": "/css/admin.css",
     "/css/app.css": "/css/app.css"
 }

@@ -35,16 +35,16 @@ $hero_slider = $fields['hero_slider'];
         $bg_image = $slide->background_image;
         $button = $slide->button;
         $alt_button = $slide->alt_button;
-        $has_overlay = $slide->has_overlay;
       ?>
       <div
         class="box-border relative flex items-center justify-center bg-center bg-cover md:p-20 swiper-slide"
         style="background-image: url(<?php echo $bg_image->url; ?>);"
       >
         <div class="pt-[35%]"></div>
-        <div class="flex flex-col items-center justify-center max-w-5xl p-10 m-auto text-white md:p-20 <?php if ($has_overlay) : ?> bg-black/[60%] md:border-2 md:border-white <?php endif; ?>">
-          <h2 class="mb-6 text-4xl leading-snug text-center uppercase md:text-6xl"><?php echo $title; ?></h2>
-          <div class="mb-12 text-xl text-center md:text-2xl">
+        <div class="absolute inset-0 bg-black/[40%]"></div>
+        <div class="relative z-[1] flex flex-col items-center justify-center max-w-5xl p-10 m-auto md:p-20">
+          <h2 class="mb-6 text-4xl leading-snug text-center text-white uppercase md:text-6xl"><?php echo $title; ?></h2>
+          <div class="mb-12 text-xl text-center text-white md:text-2xl">
             <?php echo $copy; ?>
           </div>
           <?php if ($button || $alt_button) : ?>

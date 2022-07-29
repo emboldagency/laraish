@@ -3,6 +3,4 @@ import '../lightbox';
 
 const elem = document.querySelector('.masonry');
 
-new Masonry(elem, {
-  itemSelector: '.masonry-item',
-});
+new Masonry(elem, { itemSelector: '.masonry-item' });

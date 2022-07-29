@@ -15,7 +15,7 @@ $fields = get_fields();
 $gallery = $fields['gallery'];
 ?>
 
-<section class="container py-10 text-xl masonry" id="lightgallery">
+<section class="container text-xl masonry" id="lightgallery">
   <?php foreach ($gallery as $image) : ?>
 
     <a href="<?php echo $image->url; ?>" class="flex items-center justify-center w-full p-5 masonry-item gallery-item" data-gallery="gallery">

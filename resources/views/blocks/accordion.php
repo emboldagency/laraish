@@ -17,7 +17,7 @@ $accordion = $fields['accordion'];
 <?php if ($accordion) : ?>
 
 <section>
-  <div class="container py-8 md:py-12">
+  <div class="container">
     <?php foreach ($accordion as $single) : ?>
       <div class="relative p-5 accordion-wrapper content-hidden">
         <div class="relative flex pr-12 accordion-title">

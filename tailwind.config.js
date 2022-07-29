@@ -62,5 +62,10 @@ module.exports = {
     },
   },
   plugins: [],
-  safelist: [],
+  safelist: [
+    "my-4",
+    "my-8",
+    "my-12",
+    "my-16",
+  ],
 }

@@ -54,7 +54,7 @@ if ($image->image) {
 ?>
 
 <section class="<?php echo $background_color; ?>">
-  <div class="container flex flex-wrap py-8 md:py-12">
+  <div class="container flex flex-wrap">
     <?php if ($image_obj) : ?>
       <div class="p-5 flex justify-center items-center order-<?php echo $image_position; ?> <?php echo trim($image_class); ?>">
         <?php $sizes = $image_obj->sizes; ?>

@@ -10,7 +10,7 @@ function enqueue_main_css_in_admin() {
 
   if ($pagenow == 'post.php' && has_blocks()) {
     wp_enqueue_style( 'main_css', get_template_directory_uri() . '/public/css/app.css' );
-    wp_enqueue_style( 'edtior_css', get_template_directory_uri() . '/public/css/admin.css' );
+    wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/public/css/admin.css' );
   }
 
 }

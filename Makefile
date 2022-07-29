@@ -37,5 +37,11 @@ prod:
 git:
 	if [ -d ~/.git.bak ]; then mv ~/.git.bak .git; fi
 
-test:
-	sed -i "s|APP_URL=|APP_URL=${DEVURL}|g" .env
+acf:
+	@echo -n "Are you positive that these fields have not already been imported? [y/N] " && read ans && [ $${ans:-N} = y ]
+	git clone https://github.com/hoppinger/advanced-custom-fields-wpcli.git ../../plugins/advanced-custom-fields-wpcli
+	wp plugin activate advanced-custom-fields-wpcli
+	wp acf import --json_file=acf-fields.json
+	rm acf-fields.json
+	wp plugin deactivate advanced-custom-fields-wpcli
+	rm -rf ../../plugins/advanced-custom-fields-wpcli

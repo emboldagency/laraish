@@ -17,7 +17,7 @@ $info_items = $fields['info'];
 <?php if ($info_items) : ?>
 
 <section class="<?php echo $background_color; ?>">
-  <div class="container flex flex-wrap py-8 md:py-12">
+  <div class="container flex flex-wrap">
     <?php foreach ($info_items as $item) : ?>
       <div class="flex flex-wrap justify-between w-full md:w-1/2">
         <div class="items-center w-full px-2 py-5 xs:w-24">
