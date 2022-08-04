@@ -66,3 +66,7 @@ $app['events']->listen(RequestHandled::class, function (RequestHandled $event) u
 foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
 	require_once get_template_directory() . '/functions/' . basename($function);
 }
+
+// disable xmlrpc
+add_filter( 'xmlrpc_enabled', '__return_false' );
+
