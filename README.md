@@ -42,3 +42,14 @@ Add this snippet to the website's .htaccess file (not the .htaccess file in the 
 RewriteCond %{QUERY_STRING} \\?s=([^&]+) [NC]
 RewriteRule ^$ /search/%1/? [NC,R,L]
 ```
+
+## Upgrading to PHP 8.1 and Laravel 9.x
+
+Copy in all the changes from composer.json from this base repo
+
+Run `composer update` in the theme folder
+
+Copy over the contents of app/Http/Middleware/TrustProxies.php
+
+Cross your fingers and hope all the plugins work. Woocommerce currently does not but
+does have commits in their repo to fix it, which they'll hopefully launch in an update soon
