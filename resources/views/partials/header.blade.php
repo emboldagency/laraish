@@ -3,13 +3,15 @@
     <div class="flex flex-wrap justify-between mlg:flex-nowrap mlg:items-center">
       <div class="flex items-center justify-between w-full h-20 px-4 py-2 border-b-4 border-red-500 mlg:p-4 mlg:w-auto mlg:border-none lg:h-auto">
         <a href="{{ home_url() }}">
-          <img
-            src="{{ $site['header_logo']->sizes->medium }}"
-            alt="{{ $site['header_logo']->alt }}"
-            width="{{ $site['header_logo']->width }}"
-            height="{{ $site['header_logo']->height }}"
-            class="w-auto h-14 lg:h-auto lg:w-60"
-          />
+            @if ($site && $site['header_logo'])
+              <img
+                src="{{ $site['header_logo']?->sizes->medium }}"
+                alt="{{ $site['header_logo']->alt }}"
+                width="{{ $site['header_logo']->width }}"
+                height="{{ $site['header_logo']->height }}"
+                class="w-auto h-14 lg:h-auto lg:w-60"
+              />
+            @endif
         </a>
         <nav class="hidden ml-12 mlg:flex" id="main-nav-wrapper" aria-label="Primary navigation">{!! wp_nav_menu(['theme_location' => 'main-navigation', 'menu_id' => 'main-nav']) !!}</nav>
 

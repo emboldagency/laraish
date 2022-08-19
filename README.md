@@ -18,6 +18,8 @@ Note that `make dev` will fill out the .env for you, but you will still need to 
 
 The ACF fields for the starter blocks will be added programmatically. These fields will not be displayed with the rest of the field groups. They will only appear where the location rules are set for.
 
+After running the `make acf` command, go into the Theme Options it creates and hit "Update" once so that $site is an array and not a boolean.
+
 Editing the ACF fields should update the JSON files in the acf-json folder. Make sure the permissions on that folder and the contents are 755 and the group/owner is the web server user. ACF will attempt to load those fields before hitting the database, which can speed up ACF loading as well. You can commit these changes to the repo to keep the fields in sync across development environments. Fields that ACF detects are available for sync will have a sync option in the ACF Field Options page of the admin, which will update the DB from the JSON files.
 
 References:
