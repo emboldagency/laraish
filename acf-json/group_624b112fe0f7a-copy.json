@@ -3,6 +3,60 @@
     "title": "Block: Testimonials",
     "fields": [
         {
+            "key": "field_6285054366a22",
+            "label": "Display Testimonials",
+            "name": "display_testimonials",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "random": "Random",
+                "specific": "Specific"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6285058a66a23",
+            "label": "Number to Display",
+            "name": "number_to_display",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6285054366a22",
+                        "operator": "==",
+                        "value": "random"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
             "key": "field_628506912bb53",
             "label": "Testimonials",
             "name": "testimonials",
@@ -21,7 +75,43 @@
             "max": 0,
             "layout": "table",
             "button_label": "",
-            "sub_fields": []
+            "sub_fields": [
+                {
+                    "key": "field_628505bc66a24",
+                    "label": "Testimonial",
+                    "name": "testimonial",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6285054366a22",
+                                "operator": "==",
+                                "value": "specific"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "testimonials"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "save_custom": 0,
+                    "save_post_status": "publish",
+                    "acfe_bidirectional": {
+                        "acfe_bidirectional_enabled": "0"
+                    },
+                    "ui": 1
+                }
+            ]
         }
     ],
     "location": [
@@ -42,5 +132,9 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1660164856
+    "acfe_display_title": "",
+    "acfe_autosync": "",
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": ""
 }

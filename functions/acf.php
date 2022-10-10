@@ -15,23 +15,49 @@ if( function_exists('acf_add_options_page')) {
 
 /**
  * Read default ACF fields for blocks from JSON
- * Note: These fields will not be displayed with the rest of the field groups. They will only appear where the location rules are set for.
  */
-function embold_acf_register_json_fields() {
-	if (function_exists("acf_add_local_field_group")) {
-		$acf_json_data = get_template_directory() . '/acf-fields.json';
+add_action( 'admin_init', 'em_sync_acf_fields' );
+function em_sync_acf_fields() {
+    $groups = acf_get_field_groups();
+    $sync = array();
 
-		if (file_exists($acf_json_data)) {
-			$custom_fields = $acf_json_data ? json_decode(file_get_contents($acf_json_data), true) : array();
-
-			if ($custom_fields) {
-				foreach ($custom_fields as $custom_field) {
-					// ! comment this out if you import acf-fields.json into the database
-					acf_add_local_field_group($custom_field);
-				}
-			}
+		// return if no field groups
+		if (empty($groups)) {
+			return;
 		}
-	}
-}
 
-add_action("acf/init", "embold_acf_register_json_fields");
+    // find JSON field groups which have not yet been imported
+    foreach ($groups as $group) {
+			$local = acf_maybe_get($group, 'local', false);
+			$modified = acf_maybe_get($group, 'modified', 0);
+			$private = acf_maybe_get($group, 'private', false);
+
+			// ignore DB / PHP / private field groups
+			if ($local !== 'json' || $private) {
+				// do nothing
+			} elseif (!$group['ID']) {
+				$sync[$group['key']] = $group;
+			} elseif ($modified && $modified > get_post_modified_time('U', true, $group['ID'], true)) {
+				$sync[$group['key']]  = $group;
+			}
+    }
+
+		// return if no sync needed
+    if (empty($sync)) {
+			return;
+		}
+
+    if (!empty($sync)) {
+			$new_ids = array();
+
+			foreach ($sync as $key => $v) {
+				// append fields
+				if (acf_have_local_fields($key)) {
+					$sync[$key]['fields'] = acf_get_local_fields($key);
+				}
+
+				// import field group
+				$field_group = acf_import_field_group($sync[$key]);
+			}
+    }
+}
