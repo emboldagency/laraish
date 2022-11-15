@@ -61,11 +61,15 @@ module.exports = {
     extend: {
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
   safelist: [
     "my-4",
     "my-8",
     "my-12",
     "my-16",
+    "prose",
+    "prose-custom",
   ],
 }

@@ -1,0 +1,9 @@
+/* Custom class using Tailwind Typography to add to wysiwyg block groups and containers */
+
+.prose-custom {
+  @apply prose 
+  py-8
+  prose-headings:text-primary-default
+  prose-th:text-white prose-th:bg-primary-default prose-th:text-left prose-th:p-2
+  prose-blockquote:bg-white prose-blockquote:border-l-primary-default;
+}
