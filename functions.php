@@ -70,3 +70,16 @@ foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
 // disable xmlrpc
 add_filter( 'xmlrpc_enabled', '__return_false' );
 
+add_theme_support( 'title-tag' );
+
+// page slug body class
+function add_page_slug_body_class( $classes ) {
+  global $post;
+  
+  if ( isset( $post ) ) {
+      $classes[] = 'page-' . $post->post_name;
+  }
+  return $classes;
+}
+
+add_filter( 'body_class', 'add_page_slug_body_class' );
