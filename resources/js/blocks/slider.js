@@ -15,16 +15,18 @@ new Swiper('.hero-slider', {
       grabCursor: false,
     },
   },
-  afterInit() {
-    let element = document.querySelector(".hero-slider .swiper-wrapper");
-    element.classList.remove("flex");
+  on: {
+    afterInit() {
+      let element = document.querySelector(".hero-slider .swiper-wrapper");
+      element.classList.remove("flex");
 
-    if(localStorage.getItem("visited") === null){
-      localStorage.setItem("visited", true);
-      window.scrollTo(0, 0);
-      document.documentElement.scrollIntoView(true);
+      if(localStorage.getItem("visited") === null){
+        localStorage.setItem("visited", true);
+        window.scrollTo(0, 0);
+        document.documentElement.scrollIntoView(true);
+      }
     }
-  }
+   }
 });
 
 new Swiper('.testimonials-slider', {
