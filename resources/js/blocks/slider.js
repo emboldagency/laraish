@@ -14,6 +14,16 @@ new Swiper('.hero-slider', {
     1024: {
       grabCursor: false,
     },
+  },
+  afterInit() {
+    let element = document.querySelector(".hero-slider .swiper-wrapper");
+    element.classList.remove("flex");
+
+    if(localStorage.getItem("visited") === null){
+      localStorage.setItem("visited", true);
+      window.scrollTo(0, 0);
+      document.documentElement.scrollIntoView(true);
+    }
   }
 });
 
