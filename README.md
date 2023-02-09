@@ -5,8 +5,11 @@ You can find documentation for the base laraish theme here: [github.com/laraish/
 ## Setting up the theme
 
 Make sure there is a wp-config.php already set up in the site root or the following commands will fail.
+If you do not have a wp-config.php yet, you can rename the sample one, then set its values.
 
-If there is not one, you can generate one with `wp config create`.
+`mv wp-config-sample.php wp-config.php`
+
+If there is no WP database yet, run `wp core install`.
 
 You can run the following commands in the root of the theme directory:
 
