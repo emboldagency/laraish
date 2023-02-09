@@ -9,7 +9,11 @@ If you do not have a wp-config.php yet, you can rename the sample one, then set 
 
 `mv wp-config-sample.php wp-config.php`
 
-If there is no WP database yet, run `wp core install`.
+If there is no WP database yet, run `wp core install` with all the required parameters, example:
+
+`wp core install --url=example--user.embold.dev --title=example --admin_user=embold --admin_email=info@embold.com`
+
+This will spit out the admin password, be sure to save it in Bitwarden now under "Sitename (Wordpress)", with the owner being "emBold".
 
 You can run the following commands in the root of the theme directory:
 
