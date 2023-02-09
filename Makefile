@@ -14,6 +14,7 @@ dev:
 
 	# remove .git directory so none of the theme's starter files are overwritten
 	# moving it to a different directory so it can be restored for developing
+	rm -rf ~/.git.bak
 	mv .git ~/.git.bak
 
 	# activate the new theme
