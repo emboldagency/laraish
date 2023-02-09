@@ -2,7 +2,7 @@
 
 You can find documentation for the base laraish theme here: [github.com/laraish/laraish](https://github.com/laraish/laraish).
 
-## Setting up the theme
+## Setting up WP, only if a new build
 
 Make sure there is a wp-config.php already set up in the site root or the following commands will fail.
 If you do not have a wp-config.php yet, you can rename the sample one, then set its values.
@@ -14,6 +14,8 @@ If there is no WP database yet, run `wp core install` with all the required para
 `wp core install --url=example--user.embold.dev --title=example --admin_user=embold --admin_email=info@embold.com`
 
 This will spit out the admin password, be sure to save it in Bitwarden now under "Sitename (Wordpress)", with the owner being "emBold".
+
+## Setting up the theme
 
 You can run the following commands in the root of the theme directory:
 
