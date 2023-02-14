@@ -83,3 +83,12 @@ function add_page_slug_body_class( $classes ) {
 }
 
 add_filter( 'body_class', 'add_page_slug_body_class' );
+
+// enable svg upload support
+function add_svg_to_upload_mimes( $upload_mimes ) {
+  $upload_mimes['svg'] = 'image/svg+xml';
+  $upload_mimes['svgz'] = 'image/svg+xml';
+  return $upload_mimes;
+}
+
+add_filter( 'upload_mimes', 'add_svg_to_upload_mimes', 10, 1 );
