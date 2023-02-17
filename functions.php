@@ -71,6 +71,7 @@ foreach (glob(get_template_directory() . "/functions/*.php") as $function) {
 add_filter( 'xmlrpc_enabled', '__return_false' );
 
 add_theme_support( 'title-tag' );
+add_theme_support( 'post-thumbnails' );
 
 // page slug body class
 function add_page_slug_body_class( $classes ) {
