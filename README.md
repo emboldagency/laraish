@@ -28,9 +28,16 @@ You can run the following commands in the root of the theme directory:
 Note that `make dev` will fill out the .env for you, but you will still need to fill it out manually when running `make prod`.
 
 ## ACF blocks and importing fields
-The field groups in acf-json should get loaded automatically.
 
-Editing the ACF fields should update the JSON files in the acf-json folder. Make sure the permissions on that folder and the contents are 755 and the group/owner is the web server user. ACF will attempt to load those fields before hitting the database, which can speed up ACF loading as well. You can commit these changes to the repo to keep the fields in sync across development environments. Fields that ACF detects are available for sync will have a sync option in the ACF Field Options page of the admin, which will update the DB from the JSON files.
+The field groups in acf-json will not get loaded automatically until you follow these steps from inside the theme folder.
+
+`chmod 755 acf-json`
+
+**You cannot edit ACF fields in the backend until you go to Custom Fields > Field Groups > Sync**
+
+ACF will then load these fields from json files before hitting the database, which can speed up ACF loading as well. You can commit these changes to the repo to keep the fields in sync across development environments. 
+
+Fields that ACF detects are available for sync will have a sync option in the ACF Field Options page of the admin, which will update the DB from the JSON files.
 
 References:
 - [ACF Local JSON](https://www.advancedcustomfields.com/resources/local-json/)
