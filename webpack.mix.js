@@ -11,7 +11,13 @@ fs.readdirSync('./resources/js/blocks/').forEach(file => {
     mix.js(`resources/js/blocks/${file}`, 'public/js/blocks')
 });
 
-mix.postCss("resources/css/app.css", "public/css")
+mix
+.webpackConfig({
+    watchOptions: {
+        ignored: '/node_modules/'
+      }
+})
+.postCss("resources/css/app.css", "public/css")
 .postCss("resources/css/admin.css", "public/css")
 .options({
     postCss: [
@@ -26,4 +32,5 @@ mix.postCss("resources/css/app.css", "public/css")
     proxy: target,
     ghostMode: false,
     open: false
-});
+})
+.disableNotifications();
