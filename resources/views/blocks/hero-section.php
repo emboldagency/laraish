@@ -18,7 +18,7 @@ $hero_slider = $fields['hero_slider'];
 
 <?php if ($hero_slider) : ?>
 
-<section id="<?php $block['id']; ?>" class="hero-slider swiper">
+<section id="<?php $block['id']; ?>" class="hero-slider force-section-full-width bg-accent <?php if (count($hero_slider) > 1) : ?>swiper<?php endif; ?>">
   <!--
     If the hero section is the first section on the page and there is more than one slide,
     we want to add an invisible H1 above the slider, and make all the slide titles H2. This is for accessibility.
@@ -27,7 +27,7 @@ $hero_slider = $fields['hero_slider'];
     <h1 class="sr-only"><?php the_title(); ?></h1>
   <?php endif; ?>
 
-  <div class="swiper-wrapper flex">
+  <div class="<?php if (count($hero_slider) > 1) : ?>swiper-wrapper<?php endif; ?>">
     <?php foreach ($hero_slider as $slide) : ?>
       <?php
         $title = $slide->title;
@@ -37,8 +37,8 @@ $hero_slider = $fields['hero_slider'];
         $alt_button = $slide->alt_button;
       ?>
       <div
-        class="box-border relative flex items-center justify-center bg-center bg-cover md:p-20 swiper-slide"
-        style="background-image: url(<?php echo $bg_image->url; ?>);"
+        class="box-border relative flex items-center justify-center bg-center bg-cover md:p-20 <?php if (count($hero_slider) > 1) : ?>swiper-slide<?php endif; ?>"
+        <?php if ($bg_image) : ?>style="background-image: url(<?php echo $bg_image->sizes->{'2048x2048'}; ?>);"<?php endif; ?>
       >
         <div class="pt-[35%]"></div>
         <div class="absolute inset-0 bg-black/[40%]"></div>
@@ -78,8 +78,10 @@ $hero_slider = $fields['hero_slider'];
     <?php endforeach; ?>
   </div>
 
-  <div class="p-4 !text-gray-500 !h-16 !w-16 bg-white rounded-r-sm swiper-button-prev"></div>
-  <div class="p-4 !text-gray-500 !h-16 !w-16 bg-white rounded-r-sm swiper-button-next"></div>
+  <?php if (count($hero_slider) > 1) : ?>
+    <div class="p-4 !text-gray-500 !h-10 !w-10 bg-white rounded-r-sm swiper-button-prev"></div>
+    <div class="p-4 !text-gray-500 !h-10 !w-10 bg-white rounded-r-sm swiper-button-next"></div>
+  <?php endif; ?>
 </section>
 
 <?php endif; ?>
