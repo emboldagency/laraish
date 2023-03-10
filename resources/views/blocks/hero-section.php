@@ -27,7 +27,7 @@ $hero_slider = $fields['hero_slider'];
     <h1 class="sr-only"><?php the_title(); ?></h1>
   <?php endif; ?>
 
-  <div class="<?php if (count($hero_slider) > 1) : ?>swiper-wrapper<?php endif; ?>">
+  <div class="<?php if (count($hero_slider) > 1) : ?>swiper-wrapper flex<?php endif; ?>">
     <?php foreach ($hero_slider as $slide) : ?>
       <?php
         $title = $slide->title;
